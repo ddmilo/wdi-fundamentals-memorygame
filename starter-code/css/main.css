@@ -1,0 +1,76 @@
+h1, h2, h3 {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+/*find/create image for bg*/
+
+body {
+	text-align: center;
+	
+}
+
+/*find different font for .paragraphs*/
+
+.paragraphs {
+	font-size: 18px;
+	font-family: comic, sans-serif;
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+}
+
+.board {
+	height: 80%;
+	width:  50%;
+	display: inline-block;
+}
+
+.card {
+	height: 200px;
+	width: 150px;
+	background-color: yellow;
+	border-radius: 10px;
+	border: 1px solid black;
+	float: left;
+	margin: 8%;
+	
+}
+
+.name {
+	color: #FF0000;
+}
+
+nav {
+	background-color: #808080;
+}
+
+nav a {
+	background-color: #ffbf00;
+	color: white;
+	padding: 35px;
+	display: block;
+	float: left;
+}
+
+nav a:hover {
+	background-color: #ee5f3c;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+footer {
+	background-color: #808080;
+}
