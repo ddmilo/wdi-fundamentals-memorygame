@@ -1,9 +1,9 @@
 console.log("JS file is connected to HTML! Woo!")
 
-var cardOne = "King";
-var cardTwo = "Queen";
-var cardThree = "King";
-var cardFour = "Queen"; 
+var cards = ['Queen', 'Queen', 'King', 'King'];
+var cardsInPlay = []
+
+
 
 
 
@@ -11,52 +11,51 @@ var cardFour = "Queen";
 if (cardOne === cardThree) {
 	alert("You found a match!");	
 }
-else if (cardOne != cardFour) {
+else  (cardOne != cardFour) {
 	alert("Sorry, try again.");
-}
-else if (cardOne != cardTwo) 
-	alert("Sorry, try again.");
+}*/
 
-else if (cardTwo === cardFour){
-	alert("You found a match!");	
-}
-else if (cardTwo != cardThree){
-	alert("Sorry, try again.");
-}
-else if (cardTwo != cardOne) {
-	alert("Sorry, try again.")
-}	
-else if (cardThree === cardOne){
-	alert("You found a match!");	
-}
-else if (cardThree != cardTwo){
-	alert("Sorry, try again.");
-}
-else if (cardThree != cardFour){
-	alert("Sorry, try again.")
-}
-else if (cardFour === cardTwo){
-	alert("You found a match!");	
-}
-else if (cardFour != cardThree){
-	alert("Sorry, try again.");
-}
-else (cardFour != cardOne)
-	alert("Sorry, try again.") */
 
 var gameBoard = document.getElementById('game-board');
 
 var createCards = function(){
-	for (i = 1; i < cards.length; i++) {
-		var gameCard = document.createElement('div')
-		gameCard.className ='card'
-		gameBoard.appendChild(gameCard)
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement = document.createElement('div');
+		cardElement.className ='card';
+		cardElement.setAttribute('data-card', cards[i]);
+		cardElement.addEventListener('click', isTwoCards);
+		gameBoard.appendChild(cardElement);
+		
 	}
 };
 
+var isMatch = function(cards) {
+	if (cards[0] === cards[1]) {
+		alert("You found a match!");
+	} else if (cards[2] === cards[3]) {
+		alert("You found a match!")	
+	} else {
+		alert("Sorry, try again.")
+	}
+}
 
 
+var isTwoCards = function(){
+	cardsInPlay.push(this.getAttribute('data-card'));
+	console.log(this.getAttribute('data-card'));
+	if (this.getAttribute('data-card') === 'king') {
+		this.innerHTML = "<img src='king.png'>"; 
+	} else {
+		this.innerHTML = "<img src='queen.png'>"; 
+	}  
+  if (cardsInPlay.length === 2) {  
+    isMatch(cardsInPlay);    
+    cardsInPlay = [];
+  }
+}
 
+
+createCards();
 
 
 
