@@ -7,46 +7,59 @@ var cardFour = "Queen";
 
 
 
-//Card 1
+/*
 if (cardOne === cardThree) {
 	alert("You found a match!");	
 }
 else if (cardOne != cardFour) {
 	alert("Sorry, try again.");
 }
-else (cardOne != cardTwo) 
+else if (cardOne != cardTwo) 
 	alert("Sorry, try again.");
 
-
-
-//Card 2
-if (cardTwo === cardFour){
+else if (cardTwo === cardFour){
 	alert("You found a match!");	
 }
 else if (cardTwo != cardThree){
 	alert("Sorry, try again.");
 }
-else (cardTwo != cardOne)
+else if (cardTwo != cardOne) {
 	alert("Sorry, try again.")
-
-	
-//Card 3
-if (cardThree === cardOne){
+}	
+else if (cardThree === cardOne){
 	alert("You found a match!");	
 }
 else if (cardThree != cardTwo){
 	alert("Sorry, try again.");
 }
-else (cardThree != cardFour)
+else if (cardThree != cardFour){
 	alert("Sorry, try again.")
-
-
-//Card 4
-if (cardFour === cardTwo){
+}
+else if (cardFour === cardTwo){
 	alert("You found a match!");	
 }
 else if (cardFour != cardThree){
 	alert("Sorry, try again.");
 }
 else (cardFour != cardOne)
-	alert("Sorry, try again.")
+	alert("Sorry, try again.") */
+
+var gameBoard = document.getElementById('game-board');
+
+var createCards = function(){
+	for (i = 1; i < cards.length; i++) {
+		var gameCard = document.createElement('div')
+		gameCard.className ='card'
+		gameBoard.appendChild(gameCard)
+	}
+};
+
+
+
+
+
+
+
+
+
+
